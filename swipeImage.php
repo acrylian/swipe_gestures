@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple plugin that enables touch screen left and right swiping on the single image page.
+ * A simple plugin that enabled touch screen left and right swiping on the single image page.
  * Based on the jQuery plugin touchSwipe http://labs.rampinteractive.co.uk/touchSwipe
  *
  * @author Malte Müller (acrylian)
@@ -24,16 +24,14 @@ function swipejs() {
 				//Generic swipe handler for all directions
 				  <?php if(hasPrevImage()) { ?>
 						swipeRight:function(event, direction, distance, duration, fingerCount) {
-							//alert("You swiped " + direction );
 							this.fadeOut();
 							document.location.href = '<?php echo getPrevImageURL(); ?>';
 						},
 					<?php } ?>
 					<?php if(hasNextImage()) { ?>
 						swipeLeft:function(event, direction, distance, duration, fingerCount) {
-							//alert("You swiped " + direction );	
 							this.fadeOut();
-							document.location.href = '<?php echo getNextImageURL(); ?>';
+    					document.location.href = '<?php echo getNextImageURL(); ?>';
 						},
 					<?php } ?>
 					//Default is 75px, set to 0 for demo so any distance triggers swipe
