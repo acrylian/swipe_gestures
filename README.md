@@ -1,8 +1,11 @@
-imageswipe
+SwipeGestures
 ==========
 
-A Zenphoto plugin that enables touch screen left and right swiping for the previous and next image on the single image page.
-
+A Zenphoto plugin that enables touch screen left and right swiping for
+- next/prev single image
+- next/prev album page
+- next/prev news loop page
+- 
 Based on the jQuery plugin touchSwipe http://labs.rampinteractive.co.uk/touchSwipe
 
 Usage
