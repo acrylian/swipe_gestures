@@ -8,6 +8,8 @@ A Zenphoto plugin that enables touch screen left and right swiping for:
 
 Based on the jQuery plugin touchSwipe http://labs.rampinteractive.co.uk/touchSwipe
 
+The plugin triggers on the `<html>` main element so you can swipe on the whole page.
+
 Usage
 ------
 
