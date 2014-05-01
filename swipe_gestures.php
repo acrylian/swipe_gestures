@@ -25,7 +25,7 @@ class swipeGestures {
 	function swipeGesturesOptions() {
 	
 	}
-		
+
 	function getOptionsSupported() {
 		$options = array(
 			gettext('Single image page') => array(
@@ -50,6 +50,7 @@ class swipeGestures {
 		$nexturl = '';
 		switch($_zp_gallery_page) {
 			case 'index.php':
+			case 'gallery.php':
 			case 'album.php':
 			case 'search.php':
 				if(getOption('swipe_gestures_album')) {
