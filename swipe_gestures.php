@@ -75,12 +75,21 @@ class swipeGestures {
 				break;
 			case 'news.php':
 				if(getOption('swipe_gestures_news') && getOption('zp_plugin_zenpage')) {
-					if(getPrevNewsPageURL()) {
-						$prevurl = getPrevNewsPageURL(); 
-					}
-					if(getNextNewsPageURL()) {
-						$nexturl = getNextNewsPageURL(); 
-					}
+					if(is_NewsArticle()) {
+						if(getPrevNewsURL()) {
+							$prevurl = getPrevNewsURL();
+						}
+						if(getNextNewsURL()) {
+							$nexturl = getNextNewsURL();
+						}
+					} else {
+						if(getPrevNewsPageURL()) {
+							$prevurl = getPrevNewsPageURL(); 
+						}
+						if(getNextNewsPageURL()) {
+							$nexturl = getNextNewsPageURL(); 
+						}
+					{
 				}
 				break;
 		}
