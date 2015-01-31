@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple plugin that enabled touch screen left and right swiping on the single image page.
+ * A simple plugin that enabled touch screen left and right swiping for various previous and next pages.
  * Based on the jQuery plugin touchSwipe http://labs.rampinteractive.co.uk/touchSwipe
  *
  * @author Malte Müller (acrylian) <info@maltem.de>
