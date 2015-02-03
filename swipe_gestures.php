@@ -13,7 +13,7 @@
 $plugin_is_filter = 9|THEME_PLUGIN;
 $plugin_description = gettext('A simple plugin that enabled touch screen left and right swiping on the single image page. Based on the jQuery plugin touchSwipe.');
 $plugin_author = 'Malte Müller (acrylian)';
-$plugin_version = '1.0.1';
+$plugin_version = '1.0.2';
 $option_interface = 'swipeGestures';
 zp_register_filter('theme_head','swipeGestures::swipejs');
 
@@ -78,9 +78,11 @@ class swipeGestures {
 					if(is_NewsArticle()) {
 						if(getPrevNewsURL()) {
 							$prevurl = getPrevNewsURL();
+							$prevurl = $prevurl['link'];
 						}
 						if(getNextNewsURL()) {
 							$nexturl = getNextNewsURL();
+							$nexturl = $nexturl['link'];
 						}
 					} else {
 						if(getPrevNewsPageURL()) {
