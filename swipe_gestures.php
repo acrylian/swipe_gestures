@@ -91,7 +91,7 @@ class swipeGestures {
 						if(getNextNewsPageURL()) {
 							$nexturl = getNextNewsPageURL(); 
 						}
-					{
+					}
 				}
 				break;
 		}
