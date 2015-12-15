@@ -15,4 +15,4 @@ Please not that this plugin only triggers the loading the pages. It does not and
 Usage
 ------
 
-Install in the `/plugins` and enable the plugin. 
+Put the file `swipe_gestures.php` and the folder of the same name into your `/plugins` folder and enable the plugin. 
