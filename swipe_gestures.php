@@ -23,7 +23,7 @@ zp_register_filter('theme_head','swipeGestures::swipejs');
  */
 class swipeGestures {
 
-	function swipeGesturesOptions() {
+	function __construct() {
 	
 	}
 
