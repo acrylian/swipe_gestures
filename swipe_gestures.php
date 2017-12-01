@@ -13,7 +13,7 @@
 $plugin_is_filter = 9|THEME_PLUGIN;
 $plugin_description = gettext('A simple plugin that enabled touch screen left and right swiping on the single image page. Based on the jQuery plugin touchSwipe.');
 $plugin_author = 'Malte Müller (acrylian)';
-$plugin_version = '1.0.5';
+$plugin_version = '1.0.6';
 $option_interface = 'swipeGestures';
 zp_register_filter('theme_head','swipeGestures::swipejs');
 
@@ -30,17 +30,25 @@ class swipeGestures {
 	function getOptionsSupported() {
 		$options = array(
 			gettext('Single image page') => array(
+				'order' => 0,
 				'key' => 'swipe_gestures_image', 
 				'type' => OPTION_TYPE_CHECKBOX,
 				'desc' => gettext('Enables left/right swipe gestures for the previous/next image navigation.')),
 			gettext('Album pages') => array(
-				'key' => 'swipe_gestures_album', 
+				'order' => 1,
+				'key' => 'swipe_gestures_album',
 				'type' => OPTION_TYPE_CHECKBOX,
 				'desc' => gettext('Enables left/right swipe gestures for the previous/next album/search page navigation.')),
-			gettext('News pages') => array(
-				'key' => 'swipe_gestures_news', 
+			gettext('News loop pages') => array(
+				'order' => 2,
+				'key' => 'swipe_gestures_news',
 				'type' => OPTION_TYPE_CHECKBOX,
-				'desc' => gettext('Enables left/right swipe gestures for the previous/next news loop page navigation (<em>news on index</em> option not supported).'))
+				'desc' => gettext('Enables left/right swipe gestures for the previous/next news loop page navigation (<em>news on index</em> option not supported).')),
+			gettext('Single News pages') => array(
+				'order' => 3,
+				'key' => 'swipe_gestures_news_single',
+				'type' => OPTION_TYPE_CHECKBOX,
+				'desc' => gettext('Enables left/right swipe gestures for the previous/next single news page navigation.'))
 		);
 		return $options;
 	}
@@ -74,8 +82,16 @@ class swipeGestures {
 				}
 				break;
 			case 'news.php':
-				if(getOption('swipe_gestures_news') && getOption('zp_plugin_zenpage')) {
-					if(is_NewsArticle()) {
+				if (getOption('zp_plugin_zenpage')) {
+					if ((getOption('swipe_gestures_news')) && (!is_NewsArticle())) {
+						if(getPrevNewsPageURL()) {
+							$prevurl = getPrevNewsPageURL(); 
+						}
+						if(getNextNewsPageURL()) {
+							$nexturl = getNextNewsPageURL(); 
+						}
+					}
+					if ((getOption('swipe_gestures_news_single')) && (is_NewsArticle())) {
 						if(getPrevNewsURL()) {
 							$prevurl = getPrevNewsURL();
 							$prevurl = $prevurl['link'];
@@ -83,13 +99,6 @@ class swipeGestures {
 						if(getNextNewsURL()) {
 							$nexturl = getNextNewsURL();
 							$nexturl = $nexturl['link'];
-						}
-					} else {
-						if(getPrevNewsPageURL()) {
-							$prevurl = getPrevNewsPageURL(); 
-						}
-						if(getNextNewsPageURL()) {
-							$nexturl = getNextNewsPageURL(); 
 						}
 					}
 				}
