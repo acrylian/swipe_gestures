@@ -5,6 +5,7 @@ A [Zenphoto](http://www.zenphoto.org) plugin that enables touch screen left and 
 - next/prev single image
 - next/prev album page
 - next/prev news loop page ("news on index" option not supported)
+- next/prev single news article
 
 Based on the jQuery plugin touchSwipe http://labs.rampinteractive.co.uk/touchSwipe
 
