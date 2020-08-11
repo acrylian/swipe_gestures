@@ -11,7 +11,7 @@ Based on the jQuery plugin touchSwipe http://labs.rampinteractive.co.uk/touchSwi
 
 The plugin triggers on the `<html>` main element so you can swipe on the whole page.
 
-Please not that this plugin only triggers the loading the pages. It does not and cannot provide any swipe animation. This would be theme domain.
+**Please note:**  This plugin only triggers the loading the pages on swipe gestures. It does not and cannot provide any swipe animation. This would be theme domain.
 
 Usage
 ------
